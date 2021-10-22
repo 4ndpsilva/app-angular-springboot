@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { Course } from './../model/course';
 import { CourseService } from './../../courses/service/course.service';
 
@@ -9,7 +11,7 @@ import { CourseService } from './../../courses/service/course.service';
   styleUrls: ['./course.component.scss']
 })
 export class CourseComponent implements OnInit {
-  courses: Course[] = [];
+  courses: Observable<Course[]> = new Observable();
 
   displayedColumns = ['name', 'category'];
 
