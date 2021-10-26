@@ -11,11 +11,11 @@ import { CourseService } from './../../courses/service/course.service';
   styleUrls: ['./course.component.scss']
 })
 export class CourseComponent{
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
 
   displayedColumns = ['name', 'category'];
 
   constructor(private service: CourseService) { 
-    this.courses = this.service.list();
+    this.courses$ = this.service.list();
   }
 }
